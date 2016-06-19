@@ -1,4 +1,5 @@
 var React = require("React");
+
 module.exports = React.createClass({displayName: 'Slider',
 	getInitialState: function() {
     return {value: '10'};

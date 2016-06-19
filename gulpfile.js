@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var Server = require('karma').Server;
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -6,6 +7,9 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
 
+browserify().external('react/addons')
+browserify().external('react/lib/ReactContext')
+browserify().external('react/lib/ReactExecutionEnvironment')
 function compile(watch) {
   var bundler = watchify(browserify({ entries: ['./src/index.js'],debug: true }).transform(babel,{presets: ["es2015", "react"]}));
 
@@ -37,3 +41,10 @@ gulp.task('build', function() { return compile(); });
 gulp.task('watch', function() { return watch(); });
 
 gulp.task('default', ['watch']);
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    autoWatch: true,
+    singleRun: false
+  }, done).start();
+});
