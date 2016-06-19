@@ -4,5 +4,6 @@ import Slider from '../src';
 
 describe("slider", function() {
   it("slides", function() {
+    expect(shallow(<Slider />).contains(<div/>)).toBe(true);
   });
 });
