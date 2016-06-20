@@ -6,12 +6,12 @@ const defaultProps = {};
 
 class GoldTagLine extends React.Component {
   constructor(props) {
-    this.goldText = this.goldText.bind(this);
     super(props);
+    this.goldText = this.goldText.bind(this);
   }
   goldText(){
-    if(this.prop.goldPieces){
-      return this.prop.goldPieces+" "+ "pieces of gold!";
+    if(this.props.goldPieces){
+      return this.props.goldPieces+" "+ "pieces of gold!";
     }else{return "";}
   }
   render() {

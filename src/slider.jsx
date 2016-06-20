@@ -8,16 +8,21 @@ const defaultProps = {};
 class Slider extends React.Component {
   constructor(props) {
     super(props);
+    this.goldPieces = this.goldPieces.bind(this);
   }
 
+  goldPieces(){
+    if(this.state){
+      return this.state.value + "";
+    }else{return "10";}
+  }
   handleChange(event) {
     this.setState({value: event.target.value });
   }
   render() {
-    const text = this.goldText();
     return (
       <div>
-      <GoldTagLine goldPieces = "10"/>
+      <GoldTagLine goldPieces = {this.goldPieces()}/>
       <input type="range" min="0" max="50" name="points" defaultValue="10" step="5" onChange={this.handleChange.bind(this)}></input>
       </div>   
     );
