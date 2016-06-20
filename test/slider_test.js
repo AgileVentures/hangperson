@@ -5,7 +5,7 @@ import GoldTagLine from '../src/goldtagline.jsx'
 import {expect} from 'chai';
 
 describe("slider", function() {
-  it("slides", function() {
+  it("defaults to 10 pieces of gold", function() {
     expect(shallow(<Slider />).contains(<GoldTagLine goldPieces="10"/>)).to.be.true;
   });
 });
