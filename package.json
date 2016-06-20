@@ -28,7 +28,8 @@
     "react-dom": "^15.1.0",
     "vinyl-buffer": "*",
     "vinyl-source-stream": "*",
-    "watchify": "*"
+    "watchify": "*", 
+    "jquery": "*"
   },
   "dependencies": {
     "react-dom": "^15.1.0"

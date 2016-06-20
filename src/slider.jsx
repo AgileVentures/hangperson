@@ -1,20 +1,30 @@
-var React = require("React");
+import React, { PropTypes } from 'react';
+import GoldTagLine from './goldtagline.jsx'
 
-module.exports = React.createClass({displayName: 'Slider',
-	getInitialState: function() {
-    return {value: '10'};
-  },
-  handleChange: function(event) {
-    this.setState({value: event.target.value});
-    console.log(event.target.value);
-  },
-  render: function() {
-    const text = this.state.value+" "+ "pieces of gold!";
+const propTypes = {};
+
+const defaultProps = {};
+
+class Slider extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value });
+  }
+  render() {
+    const text = this.goldText();
     return (
       <div>
-      <h5>{text}</h5>
-      <input type="range" min="0" max="50" name="points" defaultValue="10" step="5" onChange={this.handleChange}></input>
+      <GoldTagLine goldPieces = "10"/>
+      <input type="range" min="0" max="50" name="points" defaultValue="10" step="5" onChange={this.handleChange.bind(this)}></input>
       </div>   
     );
   }
-});
+}
+
+Slider.propTypes = propTypes;
+Slider.defaultProps = defaultProps;
+
+export default Slider;

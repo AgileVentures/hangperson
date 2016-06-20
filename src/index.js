@@ -1,7 +1,13 @@
 var React = require("react");
 var ReactDOM = require('react-dom');
-var Slider = require("./slider.jsx");
-ReactDOM.render(
-  React.createElement(Slider, null),
-  document.getElementById('app')
-);
+import Slider from './slider.jsx';
+var $ = require("jquery");
+
+$().ready(function(){
+	if($('#app')){
+		ReactDOM.render(
+  			React.createElement(Slider, null),
+   			document.getElementById('app')
+   			);
+	}
+});
