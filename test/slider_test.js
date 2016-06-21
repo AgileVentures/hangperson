@@ -9,7 +9,7 @@ describe("slider", function() {
     expect(shallow(<Slider />).contains(<GoldTagLine goldPieces="10"/>)).to.be.true;
   });
   it("changes description when slider is moved", function(){
-    const slider = mount(<Slider />);
+    const slider = shallow(<Slider />);
     slider.find("input").simulate('change', {target: {value: 15}})
     expect(slider.contains(<GoldTagLine goldPieces="15"/>)).to.be.true;
   });
