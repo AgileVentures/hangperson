@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "gulp build"
   },
   "author": "",
   "license": "ISC",
@@ -28,13 +28,14 @@
     "react-dom": "^15.1.0",
     "vinyl-buffer": "*",
     "vinyl-source-stream": "*",
-    "watchify": "*", 
+    "watchify": "*",
     "jquery": "*"
   },
   "dependencies": {
+    "express": "^4.14.0",
     "react-dom": "^15.1.0"
-  }, 
-  "scripts": {
-    "postinstall": "gulp build"
+  },
+  "scripts":{
+    "start": "node express"
   }
 }
