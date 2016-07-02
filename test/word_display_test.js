@@ -9,7 +9,7 @@ describe("word_display", function() {
     expect(word_display.text()).to.equal("_ _ _ _ _ _");
   });
   it("displays 8 underscores when initialized with a 8 letter word and 0 correct guesses", function() {
-    const word_display = shallow(<WordDisplay wordLength="8"/>);
+    const word_display = shallow(<WordDisplay wordLength="8" correctGuesses={{letter: 'A', positions: [1]}}/>);
     expect(word_display.text()).to.equal("_ _ _ _ _ _ _ _");
   });
 });

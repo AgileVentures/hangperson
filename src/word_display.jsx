@@ -8,7 +8,7 @@ class WordDisplay extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
   	var underscores = [];
   	for(var i = 0; i < this.props.wordLength; i++){
