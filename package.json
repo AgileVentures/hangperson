@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "gulpfile.js",
-  "scripts": {
-    "postinstall": "gulp build"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -36,6 +33,7 @@
     "react-dom": "^15.1.0"
   },
   "scripts":{
-    "start": "node express"
+    "start": "node express",
+    "postinstall": "gulp build"
   }
 }
