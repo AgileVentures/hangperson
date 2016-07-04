@@ -18,13 +18,13 @@ class WordDisplay extends React.Component {
   			   underscores.push(bestGuessForPosition);
         }else{
             underscores.push("_")
-        }   
+        }
   		}else{
          if(bestGuessForPosition){
            underscores.push(" "+bestGuessForPosition);
         }else{
             underscores.push(" _")
-        }  
+        }
   		}
    	}
     return(
