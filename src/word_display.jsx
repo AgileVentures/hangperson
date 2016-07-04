@@ -12,10 +12,19 @@ class WordDisplay extends React.Component {
   render() {
   	var underscores = [];
   	for(var i = 0; i < this.props.wordLength; i++){
+      var bestGuessForPosition = this.props.correctGuesses.forPosition(i+1);
   		if(i === 0){
-  			underscores.push("_");
+        if(bestGuessForPosition){
+  			   underscores.push(bestGuessForPosition);
+        }else{
+            underscores.push("_")
+        }   
   		}else{
-  	 		underscores.push(" _");
+         if(bestGuessForPosition){
+           underscores.push(" "+bestGuessForPosition);
+        }else{
+            underscores.push(" _")
+        }  
   		}
    	}
     return(
